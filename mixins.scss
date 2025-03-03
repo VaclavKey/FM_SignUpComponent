@@ -1,0 +1,14 @@
+@mixin font-poppins {
+  font-size: 16px;
+  font-family: "Poppins", serif;
+  font-weight: 100;
+  font-style: normal;
+  color: $whiteColor;
+}
+@mixin flex {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  flex-direction: column;
+}

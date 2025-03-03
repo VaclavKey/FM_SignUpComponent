@@ -1,0 +1,223 @@
+@import 'colors.scss';
+@import 'mixins.scss';
+
+* {
+  @include font-poppins;
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+body {
+  @include flex;
+  gap: 50px; // gap between .info and .purchase
+  padding: 90px 0 60px 0;
+  justify-content: flex-start;
+  width: 100vw;
+  height: auto;
+  background-image: url("images/bg-intro-mobile.png");
+  background-color: $redColor;
+}
+
+.info {
+  @include flex;
+  gap: 20px;
+  width: 20em;
+}
+.title {
+  font-size: 1.7em;
+  line-height: 1.35em;
+  font-weight: 700;
+}
+.description {
+  font-size: 1em;
+  font-weight: 400;
+  line-height: 1.75em;
+}
+
+.purchase {
+  @include flex;
+  gap: 28px;
+  width: 320px;
+  margin: 1em;
+}
+.purchase-title {
+  @include flex;
+  width: 100%;
+  height: 90px;
+  padding: 1.25em 4em;
+  background-color: $blueColor;
+  border-radius: 10px;
+  box-shadow: 0.1px 9px $blackShadowColor;
+
+  p {
+    font-weight: 300;
+  }
+  span {
+    font-size: 1em;
+    font-weight: 600;
+  }
+}
+
+.sign-up {
+  @include flex;
+  width: 100%;
+  gap: 12px;
+  background-color: $whiteColor;
+  padding: 1.5em;
+  border-radius: 10px;
+  box-shadow: 0.1px 9px $blackShadowColorColor;
+}
+.sign-up-form {
+  @include flex;
+  gap: 16px;
+}
+.input-box {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5em;
+}
+.input-field {
+  width: 280px;
+  height: 4em;
+  padding: 1.25em;
+  padding-top: 1.4em;
+  border-radius: 5px;
+  border: 0.5px solid $darkBlueBorderColor;
+  color: $darkBlueColor;
+  font-size: 0.9em;
+  font-weight: 600;
+
+  &:focus {
+    outline: 1px solid $blueColor;
+  }
+}
+.empty-label {
+  display: none;
+  align-self: flex-end;
+  justify-self: flex-start;
+  font-style: italic;
+  color: $redColor;
+  font-size: 0.7em;
+  font-weight: 500;
+}
+.submit-button {
+  width: 280px;
+  height: 3.5em;
+  border: none;
+  border-radius: 5px;
+  box-shadow: inset 0px -3.5px $darkgreenColor;
+  background-color: $greenColor;
+  padding-top: 0.15em;
+  font-weight: 400;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+
+  &:hover {
+    filter: brightness(1.15);
+  }
+}
+.terms{
+  color: $grayishBlueColor;
+  font-size: 0.7em;
+  font-weight: 500;
+  text-align: center;
+  line-height: 2em;
+  margin: 0 1.5em;
+}
+.terms-link {
+  color: $redColor;  
+  font-size: 1em;
+  font-weight: 700;
+  text-decoration: none;
+}
+
+.input-box.empty {
+  .input-field {
+    outline: 1px solid $redColor;
+    background-image: url("images/icon-error.svg");
+    background-repeat: no-repeat;
+    background-position: calc(100% - 25px) center;
+  }
+
+  .empty-label {
+    display: flex;
+  }
+}
+
+@media (min-width: 768px) {
+  .info {
+    width: 30em;
+  }
+  .title {
+    font-size: 3em;
+  }
+  .description {
+    font-size: 1.5em;
+  }
+  .purchase {
+    width: 640px;
+  }
+  .purchase-title {
+    height: 70px;
+  }
+  .input-field, .submit-button {
+    width: 560px;
+  }
+  .sign-up {
+    padding: 3em;
+  }
+  .sign-up-form {
+    gap: 20px;
+  }
+}
+@media (min-width: 1024px) {
+  body {
+    flex-direction: row;
+    justify-content: center;
+    height: 100vh;
+    gap: 3vw;
+    padding: 10vh 20px 7vh 20px;
+  }
+  .info {
+    width: 28em;
+    gap: 25px;
+    align-items: flex-start;
+  }
+  .title {
+    text-align: left;
+  }
+  .description {
+    font-size: 1em;
+    text-align: left;
+  }
+  .purchase {
+    width: 520px;
+    margin-left: 0;
+  }
+  .purchase-title {
+    height: 65px;
+  }
+  .input-field, .submit-button {
+    width: 440px;
+  }
+  .sign-up {
+    padding: 2.75em;
+  }
+}
+@media (min-width: 1280px) {
+  body {
+    gap: 4vw;
+  }
+  .info {
+    width: 32em;
+  }
+  .purchase {
+    width: 560px;
+  }
+  .input-field, .submit-button {
+    width: 480px;
+  }
+  .sign-up {
+    padding: 2.5em;
+  }
+}
